@@ -61,7 +61,7 @@ class GBDTreeNode:
         return split_thres, last_result[:split_thres_old], last_result[split_thres_old:]
 
 
-class GBDT:
+class CART:
     def __init__(self, train_data: list):
         self.train_data = train_data  # [(x1, y1), (x2, y2) ... ]
         self.gbdtree = None
@@ -98,7 +98,7 @@ class GBDT:
 
 if __name__ == '__main__':
     train_set = [[1, 4.5], [2, 4.75], [3, 4.91], [4, 5.34], [5, 5.80], [6, 7.05], [7, 7.90], [8, 8.23], [9, 8.70], [10, 9.00]]
-    gbdt = GBDT(train_set)
+    gbdt = CART(train_set)
     gbdt.train()
     for i in train_set:
         print(gbdt.predict(i[0]) == i[1])
