@@ -97,8 +97,10 @@ class GBDT:
 
 
 if __name__ == '__main__':
-    gbdt = GBDT([[1, 4.5], [2, 4.75], [3, 4.91], [4, 5.34], [5, 5.80], [6, 7.05], [7, 7.90], [8, 8.23], [9, 8.70], [10, 9.00]])
+    train_set = [[1, 4.5], [2, 4.75], [3, 4.91], [4, 5.34], [5, 5.80], [6, 7.05], [7, 7.90], [8, 8.23], [9, 8.70], [10, 9.00]]
+    gbdt = GBDT(train_set)
     gbdt.train()
-    print(gbdt.predict(3.212))
+    for i in train_set:
+        print(gbdt.predict(i[0]) == i[1])
     # gbdt.print_tree()
 
