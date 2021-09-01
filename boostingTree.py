@@ -9,7 +9,7 @@ class BoostingTree:
 
     def train(self):
         train_data = self.source_train_data
-        for i in range(100):
+        for i in range(20):
             print(train_data)
             cart = CART(train_data, self.max_depth)
             cart.train()
